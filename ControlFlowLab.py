@@ -107,12 +107,12 @@
 # Write the code that:
 # 1. Calculates and prints the first 50 terms of the fibonacci sequence.
 # 2. Print each term and number as follows:
-#      term: 0 / number: 0
-#      term: 1 / number: 1
-#      term: 2 / number: 1
-#      term: 3 / number: 2
-#      term: 4 / number: 3
-#      term: 5 / number: 5
+    #  term: 0 / number: 0
+    #  term: 1 / number: 1
+    #  term: 2 / number: 1
+    #  term: 3 / number: 2
+    #  term: 4 / number: 3
+    #  term: 5 / number: 5
 #      etc.
 
 # Hints:
@@ -120,28 +120,22 @@
 # Use a while loop with a looping variable, or look into Python ranges, e.g.:
 #   for n in range(50):
 
-# term = 0
-# n_1 = 0
-# n_2 = 1
-# print( f'term: {term} / number: {n_1}' ) # term: 0 / number: 0
+fib_list = [0,1]
+n_1 = fib_list[-1]
+n_2 = fib_list[-2]
+term = 0
+print( f'term: {term} / number: {n_2}' ) # term: 0 / number: 0
 
-# while term < 49:
-#     term += 1
-#     if term <= 2:
-#         num = n_1 + n_2
-#         print( f'term: {term} / number: {num}' ) # term: 1 / number: 1   &   term: 2 / number: 1
-#     elif term > 2:
-#         n_1 = num # on iteration3, n1=1
-        # when term =3 , i need num = 2. meaning n1=1 and n2=1. currently n1=0 and n2=1 and num=1
-
-       
-
-
-
-
-
-
-
+while term < 49:
+    term += 1
+    if term == 1:
+        print( f'term: {term} / number: {n_1}' ) # term: 0 / number: 0
+    else:
+        fib = n_1 + n_2
+        print(f'term: {term} / number: {fib}')
+        fib_list.append(fib)
+        n_2 = n_1
+        n_1 = fib
 
 
 # exercise-06 What's the Season?
@@ -166,7 +160,7 @@
 # After setting the likely season, you can use another if...elif...else statement to "adjust" if
 # the day number falls within a certain range.
 
-month = input('Enter the month of the year (Jan - Dec):')
+'''month = input('Enter the month of the year (Jan - Dec):')
 day = int(input('Enter the day of the month:'))
 
 if len(month) > 3:
@@ -180,4 +174,4 @@ elif month.lower() in ('Jul', 'Aug') or (month.lower() == 'Sep' and day <= 21) o
 elif month.lower() in ('Oct', 'Nov') or (month.lower() == 'Dec' and day <= 20) or (month.lower() == 'Sep' and day >= 22):
     print(f"{month} {day} is in fall")
 else:
-    print('Invalid Input')
+    print('Invalid Input')'''
